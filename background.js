@@ -40,7 +40,7 @@ chrome.contextMenus.onClicked.addListener(async function(clickData, tab){
       text: "Asking to ChatGPT, please wait..."
     });
 
-    const tone = await getConfiguration(); // || "regular";
+    const tone = await getConfiguration() || "plain";
     console.error(tone);
 
     const url = "https://say-it-better-edge.vercel.app/api/query";

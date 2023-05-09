@@ -1,6 +1,5 @@
 let popup;
 
-
 function createDiv(text) {
     if (text) {
         popup = document.createElement('div');

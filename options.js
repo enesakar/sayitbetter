@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         else {
-            const selectedRadio = configForm.querySelector(`input[value="regular"]`);
+            const selectedRadio = configForm.querySelector(`input[value="plain"]`);
             if (selectedRadio) {
                 selectedRadio.checked = true;
             }
