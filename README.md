@@ -1,7 +1,7 @@
 
 ## Say It Better
 
-A chrome extension which helps you improve writing. 
+A Chrome extension that prompts ChatGPT to enhance the selected text and enhance your writing skills.
 
 Stack:
 - API: OpenAI `gpt-3.5-turbo`

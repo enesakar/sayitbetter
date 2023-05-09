@@ -43,7 +43,7 @@ chrome.contextMenus.onClicked.addListener(async function(clickData, tab){
     const tone = await getConfiguration() || "plain";
     console.error(tone);
 
-    const url = "https://say-it-better-edge.vercel.app/api/query";
+    const url = "https://say-it-better.vercel.app/api/query";
     const res = await fetch(url, {
       method: "POST",
       body: JSON.stringify({tone: tone, prompt: clickData.selectionText}),
@@ -84,6 +84,6 @@ async function addToClipboard(value) {
 
 // Solution 2 – Once extension service workers can use the Clipboard API,
 // replace the offscreen document based implementation with something like this.
-async function addToClipboardV2(value) {
-  navigator.clipboard.writeText(value);
-}
+// async function addToClipboardV2(value) {
+//   navigator.clipboard.writeText(value);
+// }
