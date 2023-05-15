@@ -6,12 +6,6 @@
     "service_worker": "background.js"
   },
   "description": "A Chrome extension that prompts ChatGPT to enhance the selected text and enhance your writing skills.",
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "action": {
     "default_popup": "index.html",
     "default_icon": {
@@ -25,5 +19,5 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["offscreen", "clipboardWrite", "contextMenus", "storage"]
+  "permissions": ["offscreen", "clipboardWrite", "contextMenus", "activeTab", "storage", "scripting"]
 }

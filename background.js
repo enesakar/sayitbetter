@@ -35,10 +35,18 @@ async function getConfiguration() {
 chrome.contextMenus.onClicked.addListener(async function(clickData, tab){
 
   if (clickData.menuItemId == "sayitbetter" && clickData.selectionText){
-    chrome.tabs.sendMessage(tab.id, {
-      action: 'createDiv',
-      text: "Asking to ChatGPT, please wait..."
-    });
+
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ['content.js']
+    }).then(() => {
+      chrome.tabs.sendMessage(tab.id, {
+        action: 'createDiv',
+        text: "Asking to ChatGPT, please wait..."
+      });
+    }).catch(err => console.error(err));
+
+
 
     const tone = await getConfiguration() || "plain";
     console.error(tone);
@@ -53,11 +61,15 @@ chrome.contextMenus.onClicked.addListener(async function(clickData, tab){
 
     addToClipboard(body);
 
-    chrome.tabs.sendMessage(tab.id, {
-      action: 'updateDiv',
-      text: "Copied to the clipboard."
-    });
-
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      files: ['content.js']
+    }).then(() => {
+      chrome.tabs.sendMessage(tab.id, {
+        action: 'updateDiv',
+        text: "Copied to the clipboard."
+      });
+    }).catch(err => console.error(err));
   }
 });
 
