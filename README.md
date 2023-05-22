@@ -5,7 +5,7 @@ A [Chrome extension](https://chrome.google.com/webstore/detail/say-it-better/jjm
 
 Stack:
 - API: OpenAI `gpt-3.5-turbo`
-- Runtime: [Vercel Edge](https://vercel.com/features/edge-functions)
+- Backend: [Vercel Edge](https://vercel.com/features/edge-functions)
 - Rate limiting and caching: [Upstash Redis](https://upstash.com/) 
 
 ### Usage
