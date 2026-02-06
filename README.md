@@ -1,5 +1,5 @@
 
-## Say It Better
+## SayItBetter Chrome Extension
 
 A [Chrome extension](https://chrome.google.com/webstore/detail/say-it-better/jjmeigcgllplllpdnmbbigmepfmofcif) that prompts ChatGPT to enhance the selected text and enhance your writing skills.
 
